@@ -17,10 +17,17 @@ def index(request):
 		"content" : f"**EMAIL**: {email}\n**NAME:** {name}\n**MESSAGE:** {message}"
 		}
 		result = requests.post(config['Config']["contact"]["webhook_url"], json=data)
-	return render(request, 'pages/index.html',ctx)
+	return render(request, 'pages/base.html',ctx)
 
 def blog(request):
 	return HttpResponse("Coming soon.")
+
+def mobile_view(request):
+      return render(request, 'pages/mobile.html')
+
+def desktop_view(request):
+      return render(request, 'pages/index.html')
+
 
 
 
