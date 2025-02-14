@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
 
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
@@ -21,9 +22,109 @@
             color: white;
         }
 
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px 50px;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .logo a {
+            color: #ffcc00;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links .active {
+            color: #ffcc00;
+        }
+
+        .nav-links a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: #ffcc00;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 60px;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                display: none;
+                padding: 15px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Achievements Section */
         .container {
             width: 80%;
-            margin: 50px auto;
+            margin: 100px auto 50px auto;
             padding: 20px;
             background: #1e1e1e;
             box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
@@ -98,33 +199,55 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">Shabir's Portfolio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/achievements" class="active">Achievements</a></li>
+            <li><a href="/project">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Achievements Section -->
     <div class="container">
         <h2>My Achievements</h2>
         <div class="achievement-slider">
             <div class="slide">
                 <img src="https://media-hosting.imagekit.io//bb242244b11242df/WhatsApp%20Image%202025-02-14%20at%2023.19.59_fc21e2e9.jpg?Expires=1834163632&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aIOvKXH2~BzK88XhwER-4E-9ZNbyy66YdiKGJ5rFkIAwDpd4OjGVdyu5TrVkcBy-hofVDti6LJZZFTCVhuFIPUnmPRJGzMGemsUugoA3GQxkNTNqziC6WvhlCJH0zQRWMP6KbtqBZXImEMBKqp2QdRXoQ9pALkoDVF8uroQO7VlKL7ZFKxllVDycUjAE-P6pm3boCcSyJbrD1oXNpaqS0WEnJc6RKFQdCWzGsQyaI~8KTvxptn65eDluaO7L3yR3eAfC22KGJXqxIXwWhApS71d5XgANvNOSCYWI1xJnmDzSC3MU4rxmMrTALhvPbpkSgoFO0TvCIyKkcqBPvQnG5w__" alt="Achievement 1">
-                <p>🏆 1st Prize - Saveetha Engineering College (CodeVita Competition)</p>
+                <p>🏆 1st Prize - Coding Competition</p>
             </div>
             <div class="slide">
                 <img src="https://media-hosting.imagekit.io//1b8fbc9ae73e49f4/WhatsApp%20Image%202025-02-14%20at%2023.19.58_35f2969b.jpg?Expires=1834163638&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=CvA9NZ1OZiMF7scZodrYINCdNCwpM-HtOdQqE6ZMVjJY2mYMMp1DIbZQaXC8BY6VevG7T9nBPgKNe-TrABnvT31DU1Wt0q~BBlsY2TLInRGpbixfXvWIFyxNyOXCcVtivws03fAfSqUyw8u-ZTbSe5zWc6Fcr4jLIMSK5gVdSYqPMVn6kwWAt912JTYHHCQ1fXIfYiBmSeY2xeZhrw24lQcb931Xp8sOf29syfxmT-4la5dqr57-lKeP763a8Qk9YLyULrDLMPTthA7G3oP7eOrgoEm8n~bYShxGz20iPmmq7FyH-7lfXaggO4Nk7JNdoAnL7puIRFSqMpPjqmo-Hg__" alt="Achievement 2">
-                <p>🥈 2nd Prize - DG Vaishnav College (Debugging Competition)</p>
+                <p>🥈 2nd Prize - Debugging Contest</p>
             </div>
             <div class="slide">
                 <img src="https://media-hosting.imagekit.io//0d7ce80cea184f6c/WhatsApp%20Image%202025-02-14%20at%2023.28.23_ddf14d78.jpg?Expires=1834164173&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ju7AOEB-m6H0iMBDN5t8enzz0IOttVU9Uou6rS2Kh8c829DVkT2ibpbwVoDZCmbnF~brY1VKFKnXNd03f6VJe1g-cCYt0gZuBsdVqPfgunrd~bIIh2K6mgVhiuj4btXXY7IxGRj0N6p8z5BiRsrl57~kzNomWOzrYpIQqnUvWImnlcB0IvFPEPxzWTe3YGzdFEnQw0JGShD~GN6daBCoEtcy-ZLPenAekcF6XDX03McSZxPB5Z66b5HCsHzxQDABBDCHxSSQ8lGepq0MklpcUyIhkdMtVhyUKQngGwx2LEy-~UtxklQRjnTnUJlsVHGsUteEbbTvnQFBEsbmkEAPcg__" alt="Achievement 3">
-                <p>🏆 1st Prize - Thiruthangal Nadar College (Web Development Competition)</p>
-            </div>
-            <div class="slide">
-                <img src="https://media-hosting.imagekit.io//f6b289216ba14d53/WhatsApp%20Image%202025-02-14%20at%2023.19.58_7a87784f.jpg?Expires=1834164173&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LT23U16sfoZbGmumKsqy-IU7riSO1ysq-Lts5OicEjgM7ALtfSF6h3JS4qbDhDNtYqKRC-5DD~iOjHkOdW12YyYJfNY2fqoB~CiAOpHlHAeAx7Z9IGOFRQntlCsKZjkFT0ZLL2QYX8dVrlPE9SmbUQI~fZiWRLY8U4dmZGsXqENnMfNIRFQvvdtPgZYmKXMB1X92alVYWP-R9sui1bZy2z9FEMQjjCYIwNAN75onbUasJuWGnCzPtvJoVr-kxwKgE1Y00~mm0BIYZpyRJnuvDdh6QVlbyt1PZ73Zcz7-n0611CgGninLCymqUO-9EitjBGPwIcmpszDFvMyvt1eayA__" alt="Achievement 4">
-                <p>🏆 1st Prize - Hindustan College (Debugging Competition)</p>
+                <p>🏆 1st Prize - Web Development Hackathon</p>
             </div>
         </div>
         
         <div class="description">
-            <p>My journey has been one of learning, dedication, and excellence. Winning competitions in coding, debugging, and web development has helped me sharpen my technical skills and stay ahead in the field. These achievements inspire me to push my limits and contribute more to the tech community.</p>
+            <p>My journey has been one of learning, dedication, and excellence...</p>
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
         $(document).ready(function(){
             $('.achievement-slider').slick({
                 dots: true,
@@ -139,5 +262,6 @@
             });
         });
     </script>
+
 </body>
 </html>
