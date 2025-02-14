@@ -19,16 +19,14 @@ def index(request):
 		result = requests.post(config['Config']["contact"]["webhook_url"], json=data)
 	return render(request, 'pages/base.html',ctx)
 
-def blog(request):
-	return HttpResponse("Coming soon.")
-
 def mobile_view(request):
       return render(request, 'pages/mobile.html')
 
 def desktop_view(request):
       return render(request, 'pages/index.html')
 
-
+def achievements(request):
+      return render(request,'pages/achievements.html')
 
 
 def project(request):
