@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    
+    <!-- jQuery and Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+            font-size: 32px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .achievement-slider {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .slide {
+            position: relative;
+            text-align: center;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+            max-height: 400px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .description {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: white;
+        }
+
+        .slick-dots li button:before {
+            color: white;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            font-size: 24px;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Achievements</h2>
+        <div class="achievement-slider">
+            <div class="slide">
+                <img src="https://media-hosting.imagekit.io//bb242244b11242df/WhatsApp%20Image%202025-02-14%20at%2023.19.59_fc21e2e9.jpg?Expires=1834163632&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aIOvKXH2~BzK88XhwER-4E-9ZNbyy66YdiKGJ5rFkIAwDpd4OjGVdyu5TrVkcBy-hofVDti6LJZZFTCVhuFIPUnmPRJGzMGemsUugoA3GQxkNTNqziC6WvhlCJH0zQRWMP6KbtqBZXImEMBKqp2QdRXoQ9pALkoDVF8uroQO7VlKL7ZFKxllVDycUjAE-P6pm3boCcSyJbrD1oXNpaqS0WEnJc6RKFQdCWzGsQyaI~8KTvxptn65eDluaO7L3yR3eAfC22KGJXqxIXwWhApS71d5XgANvNOSCYWI1xJnmDzSC3MU4rxmMrTALhvPbpkSgoFO0TvCIyKkcqBPvQnG5w__" alt="Achievement 1">
+                <p>🏆 1st Prize - Saveetha Engineering College (CodeVita Competition)</p>
+            </div>
+            <div class="slide">
+                <img src="https://media-hosting.imagekit.io//1b8fbc9ae73e49f4/WhatsApp%20Image%202025-02-14%20at%2023.19.58_35f2969b.jpg?Expires=1834163638&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=CvA9NZ1OZiMF7scZodrYINCdNCwpM-HtOdQqE6ZMVjJY2mYMMp1DIbZQaXC8BY6VevG7T9nBPgKNe-TrABnvT31DU1Wt0q~BBlsY2TLInRGpbixfXvWIFyxNyOXCcVtivws03fAfSqUyw8u-ZTbSe5zWc6Fcr4jLIMSK5gVdSYqPMVn6kwWAt912JTYHHCQ1fXIfYiBmSeY2xeZhrw24lQcb931Xp8sOf29syfxmT-4la5dqr57-lKeP763a8Qk9YLyULrDLMPTthA7G3oP7eOrgoEm8n~bYShxGz20iPmmq7FyH-7lfXaggO4Nk7JNdoAnL7puIRFSqMpPjqmo-Hg__" alt="Achievement 2">
+                <p>🥈 2nd Prize - DG Vaishnav College (Debugging Competition)</p>
+            </div>
+            <div class="slide">
+                <img src="https://media-hosting.imagekit.io//0d7ce80cea184f6c/WhatsApp%20Image%202025-02-14%20at%2023.28.23_ddf14d78.jpg?Expires=1834164173&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ju7AOEB-m6H0iMBDN5t8enzz0IOttVU9Uou6rS2Kh8c829DVkT2ibpbwVoDZCmbnF~brY1VKFKnXNd03f6VJe1g-cCYt0gZuBsdVqPfgunrd~bIIh2K6mgVhiuj4btXXY7IxGRj0N6p8z5BiRsrl57~kzNomWOzrYpIQqnUvWImnlcB0IvFPEPxzWTe3YGzdFEnQw0JGShD~GN6daBCoEtcy-ZLPenAekcF6XDX03McSZxPB5Z66b5HCsHzxQDABBDCHxSSQ8lGepq0MklpcUyIhkdMtVhyUKQngGwx2LEy-~UtxklQRjnTnUJlsVHGsUteEbbTvnQFBEsbmkEAPcg__" alt="Achievement 3">
+                <p>🏆 1st Prize - Thiruthangal Nadar College (Web Development Competition)</p>
+            </div>
+            <div class="slide">
+                <img src="https://media-hosting.imagekit.io//f6b289216ba14d53/WhatsApp%20Image%202025-02-14%20at%2023.19.58_7a87784f.jpg?Expires=1834164173&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LT23U16sfoZbGmumKsqy-IU7riSO1ysq-Lts5OicEjgM7ALtfSF6h3JS4qbDhDNtYqKRC-5DD~iOjHkOdW12YyYJfNY2fqoB~CiAOpHlHAeAx7Z9IGOFRQntlCsKZjkFT0ZLL2QYX8dVrlPE9SmbUQI~fZiWRLY8U4dmZGsXqENnMfNIRFQvvdtPgZYmKXMB1X92alVYWP-R9sui1bZy2z9FEMQjjCYIwNAN75onbUasJuWGnCzPtvJoVr-kxwKgE1Y00~mm0BIYZpyRJnuvDdh6QVlbyt1PZ73Zcz7-n0611CgGninLCymqUO-9EitjBGPwIcmpszDFvMyvt1eayA__" alt="Achievement 4">
+                <p>🏆 1st Prize - Hindustan College (Debugging Competition)</p>
+            </div>
+        </div>
+        
+        <div class="description">
+            <p>My journey has been one of learning, dedication, and excellence. Winning competitions in coding, debugging, and web development has helped me sharpen my technical skills and stay ahead in the field. These achievements inspire me to push my limits and contribute more to the tech community.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.achievement-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 700,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                arrows: true,
+                fade: true
+            });
+        });
+    </script>
+</body>
+</html>
