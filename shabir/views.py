@@ -23,10 +23,10 @@ def mobile_view(request):
       return render(request, 'pages/mobile.html')
 
 def desktop_view(request):
+      
       return render(request, 'pages/index.html')
 
-def achievements(request):
-      return render(request,'pages/achievements.html')
+
 
 
 def project(request):
@@ -75,3 +75,9 @@ import os
 def download_resume(request):
     file_path = os.path.join(settings.MEDIA_ROOT, 'files/shabeer.pdf')
     return FileResponse(open(file_path, 'rb'), as_attachment=True, filename='shabeer.pdf')
+
+def achievements(request):
+      return render(request,'pages/achievements.html')
+
+def home(request):
+      return render(request,'pages/home.html')
