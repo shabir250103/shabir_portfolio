@@ -35,7 +35,7 @@
         }
         .card-img-top {
             height: 200px;
-            object-fit: contain; /* Ensures the image fits the box without distortion */
+            object-fit: contain;
         }
         .btn-summary {
             background-color: #28a745;
@@ -46,90 +46,276 @@
             background-color: #218838;
             border-color: #1e7e34;
         }
-        .carousel-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: contain; /* Ensures the image fits the carousel box without distortion */
-        }
         .modal-body {
-            text-align: justify; /* Justifies the text */
-            padding: 15px; /* Adds padding */
-            overflow-wrap: break-word; /* Prevents text overflow */
+            text-align: justify;
+            padding: 15px;
+            overflow-wrap: break-word;
         }
+        .carousel-item img {
+    width: 100%;
+    height: 400px; /* Adjust this height as needed */
+    object-fit: contain; /* Ensures the image fits without cropping */
+}
+
     </style>
 </head>
 <body>
     <section class="projects" id="projects">
         <div class="container">
             <h1 class="title">My Projects</h1>
-            <form method="GET" class="search-bar">
-                <input type="text" name="search" value="{{ search_query }}" class="form-control" placeholder="Search Projects...">
-            </form>
-            <br>
             <div class="row">
-                {% for project in featured_projects %}
-                <div class="col-md-4 col-sm-12 mb-4">
-                    <div class="card border-success">
-                        <img src="{{ project.banner.url }}" class="card-img-top" alt="{{ project.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-success">🌟 {{ project.name }}</h5>
-                            <button class="btn btn-summary" data-toggle="modal" data-target="#projectModal{{ project.id }}">View Project</button>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% for project in projects %}
+                <!-- Project 1 -->
                 <div class="col-md-4 col-sm-12 mb-4">
                     <div class="card">
-                        <img src="{{ project.banner.url }}" class="card-img-top" alt="{{ project.name }}">
+                        <img src="https://media-hosting.imagekit.io//20a98e84d6d84596/Screenshot 2025-02-08 195122.png?Expires=1834159546&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0YV5lg4D2~N8szWWpX1q-VKTpOvrGcUGRn10JdsCVslXzNGapEUeJm7YRIwJCmtM-AknG31B4YddPXIQcYzGJYs-spqb0DCqru6X6kA7jCFo0fqM3to1xxo9vB-Yb6tRz~pIi7jPeB1E5u-zlKu0pmtStvBkm5ivzMBBEeDhFF8xlzxuFbN~NSMQPq5iDRirsP96~MSeAP9P4qsL5aPZ6WHLe49NgIPvnQbWZd8JYqhgay6H2KeqK6VvXZiNbTk1pshI2ltQLMsMAgsA1oegeBqdw2MVzrbv9uCevEnYpItZc-u-stBJVeIapKshONuiv1SoN5X06KXU1Hok~Yp9Qw__" class="card-img-top" alt="Student Information App">
                         <div class="card-body">
-                            <h5 class="card-title">{{ project.name }}</h5>
-                            <button class="btn btn-summary" data-toggle="modal" data-target="#projectModal{{ project.id }}">View Project</button>
+                            <h5 class="card-title">📚 Student Information App</h5>
+                            <button class="btn btn-summary" data-toggle="modal" data-target="#projectModal1">View Project</button>
                         </div>
                     </div>
                 </div>
-                {% empty %}
-                <p class="text-center">No projects available at the moment.</p>
-                {% endfor %}
+
+                <!-- Project 2 -->
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="https://media-hosting.imagekit.io//d243846cdb97486b/Screenshot%202025-01-16%20132245.png?Expires=1834161560&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd2gj5Akv3eSXcVQ3hhE~fqWH8pBGta0D33OdUbCHvNBw5934fZF54R1wx6m~oqjWt2kho9LQOXYsMfjL2FD6T8WZetpeFplZ1vRSJ5lApl7BbeFcaLa3ZUFC-p0IYQ65LhItYPmIxXyCUe9~3jgo4Xl3MQMckCugQq~gNthyAQhUWzYx9Vqc~aGGTiO9aNzXXoaqYuwC1DAwmi1OkhObua27UChY7vORpTCnbZxhqKobi-g9x~~5vuH5qQ5M34kh5U1nCDNK2J88Yw8kDtI4i4uCh5BM5L9UM8DF1u7nnbTPliNI2JfP6uRTQxTLVn3hQtij5iw-GGV1tApMpudRg__" class="card-img-top" alt="Flutter Weather App">
+                        <div class="card-body">
+                            <h5 class="card-title">Zatchy-Online shop</h5>
+                            <button class="btn btn-summary" data-toggle="modal" data-target="#projectModal2">View Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="https://media-hosting.imagekit.io//1ab9f33207b94ca0/Screenshot%202025-02-13%20173310.png?Expires=1834161969&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rz03PfqucsRYsAEkXcal007ykvst05EuO2aG3T4GHBB84XXcagUFijn4gxmqMnqNvqQE~go2FgwJCcY2NP0C04RHicEmZYAVOLyUQhp1VPExgwGrfW3Vpe7zwJ6y7hj9BjGKqBwagMPwhxLog6O9dUnB2D5JP7C83ZXiyIOSoAahCiXOgTAfnznaeH6Yc~PoR7RU~2tVllXzwz9~Qbc5ohz5RWiBAgfJLsiZYP4hE7age-2yhNN-epFXrNYkV06XJ3bMJBU-60pjUaUAKykCWP0wYsD8Nx9PcHl9VMjzrc9yEzhcyS66Gewvjb5EgFec6kVfmtYjv6l7GFbhhX~z2g__" class="card-img-top" alt="GV Restaurant">
+                        <div class="card-body">
+                            <h5 class="card-title">🍔 GV Restaurant</h5>
+                            <button class="btn btn-summary" data-toggle="modal" data-target="#projectModal3">View Project</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    {% for project in projects %}
-    <div class="modal fade" id="projectModal{{ project.id }}" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel{{ project.id }}" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel{{ project.id }}">{{ project.name }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="carousel{{ project.id }}" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            {% for image in project.images.all %}
-                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="{{ image.image.url }}" alt="{{ project.name }} image">
-                            </div>
-                            {% endfor %}
+    <!-- Project 1 Modal -->
+<div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel1">Student Information App</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Carousel -->
+                <div id="carouselProject1" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://media-hosting.imagekit.io//80a0584d5ff44cb7/Screenshot%202025-02-07%20122746.png?Expires=1834160636&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=utB88bdGfMJdZbhx~o0Zpn4mLnb-UkqxD~yANVZ4Wvk23Ro6evDxh0739h-ewcRu4eSa5fIf0Xfv97rh0eMog8dqcrSzwIxFg0eLNEdX0nopcbOA9y36viAn7-98j~4IUi4aZhhYp86NK0F4nW~NXyOsbWruNvoqbZY3iiN8V8lNOuv5D4RodJyl9HFiTYebmnqPosNjnso6mzKoZO1F6nLiPiQAhzI-6poCEwFVkq13pBr4S-HLdopRYHrBr15TbimTMeY4JZ~SLrFZVtjBXYZLIx26Ou~0UXxE4urG9Qf6Xi-WG3lwANeBrdKUmLXRuLFBoqKD2K4ss3r4D3iyQQ__" class="d-block w-100" style="height: 400px ;width: 100px;" alt="Student App Screenshot 1">
                         </div>
-                        <a class="carousel-control-prev" href="#carousel{{ project.id }}" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel{{ project.id }}" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//5eddfb7df4a2434f/Screenshot%202025-02-07%20124618.png?Expires=1834160640&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ERbsDOkFKpAw5BdygKUT1vinIjcwUrWon0j-Witgy9Npt0WjfdaD~UYhDX7kbCYXV6DilVCFXnp3~N9rq6~bYchPao2mUCo-UHsZnlddAIuJG5vSejqEPNs9bZ0DNZB~sVEXTZadkCbp7N4Am3-Q7Jubobx5Wai3Y4L5T8PicwVVCBkrXi2NDVovUvO8eoZoispQeB40N~KpLM2YOx~qnLNnf-R6zf0nXWT2PFtX2Jj~sXJ7eAIIq0EQmHQcUmXHbUSFhQweqdnNf5bUrxaSH8SCoblqWxpnPKHumvRymbc~cwzZfgzbKY5QFur-fuM2xOuE60gD3oDAwqVXkYcVXQ__" class="d-block w-100" alt="Student App Screenshot 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//4bd24e1c2bde491d/Screenshot%202025-02-07%20132918.png?Expires=1834160633&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=keXSDOBM-zRNgXKJqHt-MxLY5zf-AMXwP3xyrGNxr6klzODBDvynAIdhN2Gy-AZQ1w9qyxQcGutiV3uXR~FB2j4qPc8egfv8WYFWJvT8ogI6CqBxNF8Nb9qrABPCVVNZV8At~x7BTETVMX4mqwdXKpP1UAXU2g9~7CFr6GnqrDAtrRUW885aIaCn-e5I-U4FMmRqmzcfc1YWdGu2Cc3Vv-VvbVJ1WS4nrSmywrCMLaF1NdQGd~gBTQreBNfBL7aq8oT68TGPHgfddQAtgpFyegJD9D3EQpVG2OolqtaKJ0~oC2IjfivcaGTo77gzPvNP2tntKJjz14XG26JWDS3K7w__" class="d-block w-100" alt="Student App Screenshot 3">
+                        </div>
                     </div>
-                    <p class="mt-3">{{ project.description }}</p>
+                    <a class="carousel-control-prev" href="#carouselProject1" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselProject1" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
+                <p class="mt-3">
+                    🎓 Student Information App – A Smart Solution for Schools & Colleges
+The Student Information App is a two-app system designed to enhance communication between students and staff. It provides an efficient way for institutions to manage attendance, announcements, and student interactions. Developed using Flutter for mobile apps and Django for the backend, it ensures real-time updates and seamless data management.
+
+✨ Key Features:
+👨‍🏫 Staff App (Parent App)
+
+✅ Attendance Management – Staff can mark student attendance (Present/Absent/Late).
+📢 Circulars & Announcements – Send important updates and notifications.
+✉️ Student Complaints Handling – View and address student complaints efficiently.
+🎒 Student App (Child App)
+
+📊 Attendance Tracking – Students receive instant notifications if marked absent/late.
+📄 Notes Sharing – Students can upload and share study materials with juniors.
+🔔 Real-time Notifications – Get updates on attendance, announcements, and study materials.
+🛠 Tools & Technologies Used:
+📱 Mobile App Development:
+
+🚀 Flutter – Cross-platform development for Android & iOS.
+🔗 Firebase Cloud Messaging (FCM) – For push notifications.
+💻 Backend Development:
+
+🌍 Django – Backend logic, API management, and database handling.
+📡 Django REST Framework – For seamless API integration.
+🛢 PostgreSQL / MySQL – Stores student records, attendance, and complaints.
+☁️ Cloud & Hosting:
+
+🔥 Firebase – For authentication and cloud-based services.
+🌩 AWS / DigitalOcean – For server hosting and scalability.
+🛠 Other Tools:
+
+🔗 Git & GitHub – Version control and code management.
+                </p>
             </div>
         </div>
     </div>
-    {% endfor %}
+</div>
 
+<!-- Project 2 Modal -->
+<div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel2">Zatchy Online shop </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Carousel -->
+                <div id="carouselProject2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://media-hosting.imagekit.io//2d5852c06de34951/Screenshot%202025-01-16%20132225.png?Expires=1834161598&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=YhoEQCJVSCw~tWgTYuICfPGCxK6jK4x2XO7pGBlQ3TeSOHlesIJKJxuIlEgUqWlELIdkoGKkUIiK5gXEzsX31ZRN1Os7XC9GymAVW1KgM~d3SAnwi842~pmc3jnXqY8c9w76RcTDk~dWVzIo6hSdsMsax3LYGg8NzZHT2bTss1feivpoQ9WB4aszw8aV-oK4SJjejg-GBVTEdOlhxmpulQuUEffpLfkoApY8s4myHnCx8EFbtUwAoC61bVFZijUTw8idbCyERzB3aZXlcwpjvRUWC2tfosUhCU9iyypGnRcmwtkLcVKk2LMLXdcURIJEaONs3d3rgXdsHAIsXI-b3g__" class="d-block w-100" alt="Weather App Screenshot 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//d243846cdb97486b/Screenshot%202025-01-16%20132245.png?Expires=1834161560&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd2gj5Akv3eSXcVQ3hhE~fqWH8pBGta0D33OdUbCHvNBw5934fZF54R1wx6m~oqjWt2kho9LQOXYsMfjL2FD6T8WZetpeFplZ1vRSJ5lApl7BbeFcaLa3ZUFC-p0IYQ65LhItYPmIxXyCUe9~3jgo4Xl3MQMckCugQq~gNthyAQhUWzYx9Vqc~aGGTiO9aNzXXoaqYuwC1DAwmi1OkhObua27UChY7vORpTCnbZxhqKobi-g9x~~5vuH5qQ5M34kh5U1nCDNK2J88Yw8kDtI4i4uCh5BM5L9UM8DF1u7nnbTPliNI2JfP6uRTQxTLVn3hQtij5iw-GGV1tApMpudRg__" class="d-block w-100" alt="Weather App Screenshot 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//0a4f0fe774804ea2/Screenshot%202025-01-16%20133140.png?Expires=1834161567&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=oBt0-BhbglRcCkCjt~iqJ87V3W4PZxR7FHTwLwrgdayBwDFWbAt2RQJdkLRH49cW-YLVsgRfldp3heHx~NMeZvkQz8Rlqat0FhnEAWwpFIfXQ-fLuwHEbcIlfl2eNlEQn4xE9dLyIzuHpc3qp14rHEe66V791SbS4veHOE~9mAokNunfrV9dasWPoASEZx8y~xxcPx0CsiPdp6MKYtZ6pQpQwF5nrF94v-Hb4h-FcHXdNDI~Slug~vrzje9pM5IBV~IDzH6wa4x9S32DMvzDU0hfsLv8e9uIHl-9U3c72TCA1tO9bsyNV5ELYEiOfWj-htuA5-H3HZ1utpaFvE-4Ag__" class="d-block w-100" alt="Weather App Screenshot 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselProject2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselProject2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <p class="mt-3">
+                    Zatchy is a feature-rich online shopping platform designed to provide a seamless and convenient shopping experience. Built using Django, it ensures a secure and scalable e-commerce solution.
+
+✨ Key Features:
+🛍 Wide Range of Products – Browse various categories, from fashion to electronics.
+🔍 Smart Search & Filters – Easily find products with advanced search and filtering.
+🏷 Discounts & Coupons – Apply promo codes for exciting offers.
+💳 Secure Payments – Integrated multiple payment gateways for hassle-free transactions.
+📦 Order Tracking – Real-time updates on order status and delivery.
+👥 User Profiles & Wishlist – Save favorite items for later purchases.
+⭐ Reviews & Ratings – Customers can leave reviews and ratings for products.
+🚀 Fast & Responsive UI – Optimized for smooth browsing and transactions.
+🛠 Tools & Technologies Used:
+💻 Backend Development:
+
+🌍 Django – Framework for backend logic and API development.
+📡 Django REST Framework – For building RESTful APIs.
+🛢 PostgreSQL / MySQL – Database for storing product and user information.
+🖥 Frontend Development:
+
+🎨 HTML, CSS, JavaScript – For responsive and interactive UI.
+⚛ React.js / Bootstrap (if applicable) – Used for frontend development.
+📱 Mobile App (If Integrated):
+
+🚀 Flutter – To develop a cross-platform shopping app.
+☁️ Cloud & Hosting:
+
+🔥 Firebase – For authentication and cloud storage.
+🌩 AWS / DigitalOcean – For hosting and deployment.
+🛠 Other Tools:
+
+🔗 Git & GitHub – Version control and collaboration.
+🏦 Payment Gateways – Razorpay, Stripe, or PayPal for transactions.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel3">GV Restaurant</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Carousel -->
+                <div id="carouselProject3" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://media-hosting.imagekit.io//44e4ac0bf7924231/Screenshot%202025-02-13%20173323.png?Expires=1834161969&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=hHmrluYN~xCpyg6TFYV6Mk7onV9bM3amJQpFAN1CwtvphlJQfyBZBx6HWdvEQSWr6T8kySUWOV3a5W~DFRODiMAXoz25LoupAQzWvXNpO16et45h2xRGPGqIdKVKjwkGDKjyIbWwnDJBzRDnRK9RmhqN72VsiOqtQAXgPQr1jmB1AWxID~R9NyW1Y3WiZ7Vn1YdkA01RglEWjKdYF0N3NB8xWaN8uD0TJZ8IvpG8cxNxcZtHzySHDGFP6nhrQvj~LhVDjGK0z9lxsidS4F1NmsTSVmHZlvEKfJtjWBnVaFnn9maMKRBpjiKrf9gXXrijyiCHiza4t-WwHu6bWNYDcQ__" class="d-block w-100" alt="GV Restaurant Screenshot 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//5d5ffc68e13646a8/Screenshot%202025-02-13%20173356.png?Expires=1834161969&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=f~cPu~KOyp7aSjVLjX6zf0BlZUKWhK~xOEE9IUNdNU4ZDD3gGGeOjRFXbEIm~ZadxtMIrhe9I2PHwKsxk2BLeSnnu5k9lMBqFiTJ0HtppvDtALv8EV-Ccoi5k71PiDqRgw6Cfcd~aDH0NyAxhCCgjij~gUkP6pMzW~bcO3l3AcGzgET5ci4-jTD7ZNHoyy15gAjNIkoI7dNNvSOnLTqSSgbm6SFC2F4xR21K9MuqIORWJrvPfUzTSkf69ibhhS0XqMxtvC0IKm4jY730Q27kZD6RzNuwA8GJLVUApk9VkJ0abjhI-nBvw0ZM4jpr3bxn7hbmaYDzlOMPDYmcwQfleA__" class="d-block w-100" alt="GV Restaurant Screenshot 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-hosting.imagekit.io//44e4ac0bf7924231/Screenshot%202025-02-13%20173323.png?Expires=1834161969&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=hHmrluYN~xCpyg6TFYV6Mk7onV9bM3amJQpFAN1CwtvphlJQfyBZBx6HWdvEQSWr6T8kySUWOV3a5W~DFRODiMAXoz25LoupAQzWvXNpO16et45h2xRGPGqIdKVKjwkGDKjyIbWwnDJBzRDnRK9RmhqN72VsiOqtQAXgPQr1jmB1AWxID~R9NyW1Y3WiZ7Vn1YdkA01RglEWjKdYF0N3NB8xWaN8uD0TJZ8IvpG8cxNxcZtHzySHDGFP6nhrQvj~LhVDjGK0z9lxsidS4F1NmsTSVmHZlvEKfJtjWBnVaFnn9maMKRBpjiKrf9gXXrijyiCHiza4t-WwHu6bWNYDcQ__" class="d-block w-100" alt="GV Restaurant Screenshot 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselProject3" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselProject3" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <p class="mt-3">
+                    GV Restaurant is an online food ordering platform designed to offer a seamless dining experience for customers. Built using Django, it allows users to browse menus, place orders, and enjoy hassle-free food delivery or pickup.
+
+✨ Key Features:
+📖 Digital Menu – Browse a variety of dishes with detailed descriptions and prices.
+🛍️ Easy Ordering – Select food items, customize orders, and add them to the cart.
+💳 Secure Payments – Integrated payment gateways for online transactions.
+🚚 Order Tracking – Real-time updates on order preparation and delivery status.
+📍 Location-based Services – Users can choose between home delivery or nearby restaurant pickup.
+⭐ Ratings & Reviews – Customers can rate dishes and leave feedback.
+🔥 Discounts & Coupons – Apply promo codes for special offers.
+🛠 Admin Panel – Restaurant owners can manage orders, update menus, and track sales.
+🛠 Tools & Technologies Used:
+💻 Backend Development:
+
+🌍 Django – Handles backend logic and API development.
+📡 Django REST Framework – Used for RESTful API integration.
+🛢 PostgreSQL / MySQL – Stores menu items, orders, and customer data.
+🖥 Frontend Development:
+
+🎨 HTML, CSS, JavaScript – For a responsive user interface.
+⚛ React.js / Bootstrap (if applicable) – For an interactive UI.
+📱 Mobile App (If Integrated):
+
+🚀 Flutter – For a cross-platform restaurant app.
+☁️ Cloud & Hosting:
+
+🔥 Firebase – Authentication and real-time database (if used).
+🌩 AWS / DigitalOcean – Hosting and deployment.
+🛠 Other Tools:
+
+🔗 Git & GitHub – Version control and code management.
+🏦 Payment Gateways – Razorpay, Stripe, or PayPal integration.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
     <footer class="footer mt-5 text-center">
         <p>Copyright © {{ config.name }}. Made with <i class="fas fa-heart" aria-hidden="true"></i></p>
     </footer>
