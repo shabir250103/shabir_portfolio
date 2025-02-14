@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('home', views.home, name="home"),
     path('mobile_view',views.mobile_view,name="mobile_view"),
     path('desktop_view',views.desktop_view,name="desktop_view"),
     path('achievements',views.achievements,name="desktop_view"),
